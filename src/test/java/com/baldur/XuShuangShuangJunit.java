@@ -10,7 +10,7 @@ public class XuShuangShuangJunit
 	static boolean testResult = true;
 	static int testSuccess = 0;
 	static int testFail = 0;
-	FizzBuzz fizzBuzz = new FizzBuzz();
+
 	public static void main(String[] args) throws Exception
 	{
 		Class clazz = FizzBuzzTest.class;
@@ -54,7 +54,8 @@ public class XuShuangShuangJunit
 		if(actualResult)
 		{
 			testFail++;
-			System.out.println("EXPECTED " + "Fizz" + "  but  " + actualResult);	
+			testResult = false;
+			System.out.println("EXPECTED " + exception + "  but  " + actualResult);	
 		}
 		else
 		{
