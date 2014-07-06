@@ -25,5 +25,10 @@ public class FizzBuzzTest extends XuShuangShuangJunit
 		String actualResult = fizzBuzz.say(5);
 		assertEquals("Buzz", actualResult);
 	}
+	public void test_7_should_be_7()
+	{
+		String actualResult = fizzBuzz.say(7);
+		assertEquals(7,7);
+	}
 }
 
