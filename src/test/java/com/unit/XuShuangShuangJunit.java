@@ -16,7 +16,7 @@ public class XuShuangShuangJunit
 
 	public static void main(String[] args) throws Exception
 	{
-		String testCase = "com.unit";
+		String testCase = "com.baldur";
 		Reflections reflections = new Reflections(testCase);
 		Set<Class<? extends XuShuangShuangJunit>> subType = reflections.getSubTypesOf(XuShuangShuangJunit.class);
 		Iterator<Class<? extends XuShuangShuangJunit>> classIterator = subType.iterator();
