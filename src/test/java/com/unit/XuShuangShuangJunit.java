@@ -4,7 +4,8 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
-import com.baldur.FizzBuzzTest;
+import org.reflections.Reflections;
+import java.util.Set;
 
 public class XuShuangShuangJunit
 {
@@ -15,9 +16,16 @@ public class XuShuangShuangJunit
 
 	public static void main(String[] args) throws Exception
 	{
-		Class clazz = FizzBuzzTest.class;
-		runAllTest(clazz);
-		outputTestResport(testResult);	
+		String testCase = "com.unit";
+		Reflections reflections = new Reflections(testCase);
+		Set<Class<? extends XuShuangShuangJunit>> subType = reflections.getSubTypesOf(XuShuangShuangJunit.class);
+		Iterator<Class<? extends XuShuangShuangJunit>> classIterator = subType.iterator();
+		while(classIterator.hasNext())
+		{
+			Class clazz = classIterator.next();
+			runAllTest(clazz);
+		}
+		outputTestResport(testResult);
 	}
 	public static void runAllTest(Class clazz)
 	{
