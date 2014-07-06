@@ -11,18 +11,29 @@ public class FizzBuzzTest
 	static int testSuccess = 0;
 	static int testFail = 0;
 	FizzBuzz fizzBuzz = new FizzBuzz();
-	public static void main(String[] args) throws Exception
+	public static void main(String[] args)
 	{
-		Iterator<Method> methodIterator = getAllTestMethod(FizzBuzzTest.class).iterator();
+		try
+		{
+			Class clazz = FizzBuzzTest.class;
+			runAllTest(clazz);
+			outputTestResport(testResult);	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	public static void runAllTest(Class clazz) throws Exception
+	{
+		Iterator<Method> methodIterator = getAllTestMethod(clazz).iterator();
 		while(methodIterator.hasNext())
 		{
 			Method method = methodIterator.next();
-			Object obj = FizzBuzzTest.class.newInstance();
+			Object obj = clazz.newInstance();
 			method.invoke(obj, new Object[]{});
 		
-		}
-	
-		outputTestResport(testResult);	
+		}	
 	}
 	public static List<Method> getAllTestMethod(Class clazz)
 	{
