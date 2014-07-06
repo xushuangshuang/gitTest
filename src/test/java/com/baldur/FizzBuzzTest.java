@@ -2,6 +2,7 @@ package com.baldur;
 
 public class FizzBuzzTest extends XuShuangShuangJunit
 {
+	FizzBuzz fizzBuzz = new FizzBuzz();
 	public void test_Fizz_should_be_3()
 	{
 		String actualResult = fizzBuzz.say(3);
@@ -16,6 +17,11 @@ public class FizzBuzzTest extends XuShuangShuangJunit
 	{
 		String actualResult = fizzBuzz.say(1);
 		assertEquals("1", !"1".equals(actualResult));
+	}
+	public void test_Buzz_should_be_5()
+	{
+		String actualResult = fizzBuzz.say(5);
+		assertEquals("Buzz", !"Buzz".equals(actualResult));
 	}
 }
 
