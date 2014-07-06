@@ -49,7 +49,7 @@ public class XuShuangShuangJunit
 		}
 		return testMethod;
 	}
-		public static void assertEquals(String exception, boolean actualResult)
+	public static void assertEquals(String exception, boolean actualResult)
 	{
 		if(actualResult)
 		{
