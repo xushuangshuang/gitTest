@@ -22,7 +22,7 @@ public class FizzBuzzTest
 			}
 		}
 
-		for(Method method : methods )
+		for(Method method : testMethod )
 		{
 			if(method.getName().startsWith("test"))
 			{
