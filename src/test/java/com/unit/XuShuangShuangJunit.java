@@ -30,8 +30,10 @@ public class XuShuangShuangJunit
 			}
 			outputTestResport(testResult);
 		}
-
-		outputException();
+		else
+		{
+			outputException();
+		}
 	}
 	public static void outputException()
 	{
