@@ -3,6 +3,7 @@ package com.baldur;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class FizzBuzzTest
 {
@@ -21,15 +22,16 @@ public class FizzBuzzTest
 				testMethod.add(method);
 			}
 		}
-
-		for(Method method : testMethod )
+		
+		Iterator<Method> methodIterator = testMethod.iterator();
+		while(methodIterator.hasNext())
 		{
-			if(method.getName().startsWith("test"))
-			{
-				Object obj = FizzBuzzTest.class.newInstance();
-				method.invoke(obj, new Object[]{});
-			}
+			Method method = methodIterator.next();
+			Object obj = FizzBuzzTest.class.newInstance();
+			method.invoke(obj, new Object[]{});
+		
 		}
+	
 		outputTestResport(testResult);	
 	}
 	public void test_Fizz_should_be_3()
