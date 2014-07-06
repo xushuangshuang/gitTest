@@ -40,7 +40,10 @@ public class FizzBuzzTest
 		{
 			testSuccess++;
 		}
-
+		outputTestResport(testResult);	
+	}
+	public static void outputTestResport(boolean testResult)
+	{
 		if(testResult)
 		{
 			System.out.println("TESTSUCCESS :" + testSuccess + "  TESTFAIL :" + "0");
@@ -49,6 +52,5 @@ public class FizzBuzzTest
 		{
 			System.out.println("TESTFALI :" + testFail );
 		}
-
 	}
 }
