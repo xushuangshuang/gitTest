@@ -53,7 +53,7 @@ public class XuShuangShuangJunit
 			catch(Exception e)
 			{
 				testResult = false;
-				System.out.println("UNEXCEPTION exception");
+				System.out.println("UNEXCEPTION exception  " +  method);
 				e.printStackTrace();
 			}
 		}	
@@ -70,6 +70,16 @@ public class XuShuangShuangJunit
 			}
 		}
 		return testMethod;
+	}
+	public static void assertNull(Object actualResult)
+	{
+		boolean testFail = null == actualResult;
+		assertEquals(null, actualResult, testFail);
+	}
+	public static void assertEquals(Object exception, Object actualResult)
+	{
+		boolean testFail = exception == actualResult;
+		assertEquals(exception, actualResult, testFail);
 	}
 	public static void assertEquals(String exception, String actualResult)
 	{
