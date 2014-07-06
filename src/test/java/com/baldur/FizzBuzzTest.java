@@ -8,11 +8,10 @@ public class FizzBuzzTest
 	FizzBuzz fizzBuzz = new FizzBuzz();
 	public static void main(String[] args)
 	{
-		FizzBuzzTest test = new FizzBuzzTest();
 
-		test.test_1_should_be_1();
-		test.test_2_should_be_2();	
-		test.test_3_should_be_3();
+		new FizzBuzzTest().test_1_should_be_1();
+		new FizzBuzzTest().test_2_should_be_2();	
+		new FizzBuzzTest().test_3_should_be_3();
 		
 	}
 	public void test_3_should_be_3()
