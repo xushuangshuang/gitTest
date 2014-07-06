@@ -16,16 +16,26 @@ public class XuShuangShuangJunit
 
 	public static void main(String[] args) throws Exception
 	{
-		String testCase = "com.baldur";
-		Reflections reflections = new Reflections(testCase);
-		Set<Class<? extends XuShuangShuangJunit>> subType = reflections.getSubTypesOf(XuShuangShuangJunit.class);
-		Iterator<Class<? extends XuShuangShuangJunit>> classIterator = subType.iterator();
-		while(classIterator.hasNext())
+		if(args.length > 0)
 		{
-			Class clazz = classIterator.next();
-			runAllTest(clazz);
+			String testCase = args[0];
+		
+			Reflections reflections = new Reflections(testCase);
+			Set<Class<? extends XuShuangShuangJunit>> subType = reflections.getSubTypesOf(XuShuangShuangJunit.class);
+			Iterator<Class<? extends XuShuangShuangJunit>> classIterator = subType.iterator();
+			while(classIterator.hasNext())
+			{
+				Class clazz = classIterator.next();
+				runAllTest(clazz);
+			}
+			outputTestResport(testResult);
 		}
-		outputTestResport(testResult);
+
+		outputException();
+	}
+	public static void outputException()
+	{
+		System.out.println(" 没有指定需要跟踪的包名！！！！ ");
 	}
 	public static void runAllTest(Class clazz)
 	{
