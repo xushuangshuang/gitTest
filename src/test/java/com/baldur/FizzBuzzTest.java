@@ -11,18 +11,11 @@ public class FizzBuzzTest
 	static int testSuccess = 0;
 	static int testFail = 0;
 	FizzBuzz fizzBuzz = new FizzBuzz();
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
-		try
-		{
-			Class clazz = FizzBuzzTest.class;
-			runAllTest(clazz);
-			outputTestResport(testResult);	
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+		Class clazz = FizzBuzzTest.class;
+		runAllTest(clazz);
+		outputTestResport(testResult);	
 	}
 	public static void runAllTest(Class clazz) throws Exception
 	{
