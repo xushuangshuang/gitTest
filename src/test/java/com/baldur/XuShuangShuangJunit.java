@@ -10,6 +10,7 @@ public class XuShuangShuangJunit
 	static boolean testResult = true;
 	static int testSuccess = 0;
 	static int testFail = 0;
+	static int testNum = 0;
 
 	public static void main(String[] args) throws Exception
 	{
@@ -49,28 +50,35 @@ public class XuShuangShuangJunit
 		}
 		return testMethod;
 	}
-	public static void assertEquals(String exception, boolean actualResult)
+	public static void assertEquals(String exception, String actualResult)
 	{
-		if(actualResult)
+		assertEquals(exception, actualResult, exception.equals(actualResult));
+	}
+	public static void assertEquals(String exception, String actualResult, boolean testEquals)
+	{
+		if(!testEquals)
 		{
 			testFail++;
 			testResult = false;
+			testNum++;
 			System.out.println("EXPECTED " + exception + "  but  " + actualResult);	
 		}
 		else
 		{
+			testNum++;
 			testSuccess++;
 		}
 	}
 	public static void outputTestResport(boolean testResult)
 	{
+		System.out.print("TEST NUM :" + testNum + "  ");
 		if(testResult)
 		{
-			System.out.println("TESTSUCCESS :" + testSuccess + "  TESTFAIL :" + "0");
+			System.out.println("TEST SUCCESS :" + testSuccess + "  TEST FAIL :" + "0");
 		}
 		else
 		{
-			System.out.println("TESTFALI :" + testFail );
+			System.out.println("TEST FALI :" + testFail );
 		}
 	}
 }
