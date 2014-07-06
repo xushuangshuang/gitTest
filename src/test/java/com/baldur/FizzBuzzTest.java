@@ -34,6 +34,10 @@ public class FizzBuzzTest extends XuShuangShuangJunit
 	{
 		assertNull(null);
 	}
+	public void test_null_should_be()
+	{
+		assertEquals(null, null);
+	}
 
 }
 
