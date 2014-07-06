@@ -28,7 +28,7 @@ public class XuShuangShuangJunit
 				Class clazz = classIterator.next();
 				runAllTest(clazz);
 			}
-			outputTestResport(testResult);
+			outputTestResport();
 		}
 		else
 		{
@@ -96,7 +96,7 @@ public class XuShuangShuangJunit
 	}
 	public static void assertTrue(boolean actualResult)
 	{
-		boolean testFail = true == actualResult;
+		boolean testTrue = true == actualResult;
 		assertEquals(true, actualResult, testTrue);
 	}
 	public static void assertEquals(String exception, String actualResult)
@@ -124,7 +124,7 @@ public class XuShuangShuangJunit
 			testSuccess++;
 		}
 	}
-	public static void outputTestResport(boolean testResult)
+	public static void outputTestResport()
 	{
 		System.out.print("TEST NUM :" + testNum + "  ");
 		if(testResult)
