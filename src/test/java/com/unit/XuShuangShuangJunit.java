@@ -78,7 +78,15 @@ public class XuShuangShuangJunit
 	}
 	public static void assertEquals(Object exception, Object actualResult)
 	{
-		boolean testFail = exception == actualResult;
+		boolean testFail = false;
+		if(exception == null && actualResult == null)
+		{
+			testFail = true;
+		}
+		else if(exception != null)
+		{
+			testFail = exception.equals(actualResult);
+		}
 		assertEquals(exception, actualResult, testFail);
 	}
 	public static void assertEquals(String exception, String actualResult)
