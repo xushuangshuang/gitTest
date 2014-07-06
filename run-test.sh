@@ -1,3 +1,5 @@
 #!/bin/sh
 
-java -classpath "target/classes;target/test-classes" com.baldur.XuShuangShuangJunit
+java -classpath "target/classes;target/test-classes" com.unit.XuShuangShuangJunit
+
+echo "run-test  SUCCESS"
