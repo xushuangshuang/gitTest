@@ -73,24 +73,15 @@ public class XuShuangShuangJunit
 	}
 	public static void assertEquals(String exception, String actualResult)
 	{
-		assertEquals(exception, actualResult, exception.equals(actualResult));
+		boolean testFail = exception.equals(actualResult);
+		assertEquals(exception, actualResult, testFail);
 	}
 	public static void assertEquals(int exception, int actualResult)
 	{
-		if(exception != actualResult)
-		{
-			testFail++;
-			testResult = false;
-			testNum++;
-			System.out.println("EXPECTED  " + exception + "  BUT  " + actualResult);
-		}
-		else
-		{
-			testNum++;
-			testSuccess++;
-		}
+		boolean testFail = exception == actualResult;
+		assertEquals(exception, actualResult, testFail);
 	}
-	public static void assertEquals(String exception, String actualResult, boolean testEquals)
+	public static void assertEquals(Object exception, Object actualResult, boolean testEquals)
 	{
 		if(!testEquals)
 		{
