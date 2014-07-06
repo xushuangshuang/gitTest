@@ -13,17 +13,7 @@ public class FizzBuzzTest
 	FizzBuzz fizzBuzz = new FizzBuzz();
 	public static void main(String[] args) throws Exception
 	{
-		List<Method> testMethod = new ArrayList<Method>();
-		Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
-		for(Method method : methods )
-		{
-			if(method.getName().startsWith("test"))
-			{
-				testMethod.add(method);
-			}
-		}
-		
-		Iterator<Method> methodIterator = testMethod.iterator();
+		Iterator<Method> methodIterator = getAllTestMethod(FizzBuzzTest.class).iterator();
 		while(methodIterator.hasNext())
 		{
 			Method method = methodIterator.next();
@@ -33,6 +23,19 @@ public class FizzBuzzTest
 		}
 	
 		outputTestResport(testResult);	
+	}
+	public static List<Method> getAllTestMethod(Class clazz)
+	{
+		List<Method> testMethod = new ArrayList<Method>();
+		Method[] methods = clazz.getDeclaredMethods();
+		for(Method method : methods )
+		{
+			if(method.getName().startsWith("test"))
+			{
+				testMethod.add(method);
+			}
+		}
+		return testMethod;
 	}
 	public void test_Fizz_should_be_3()
 	{
