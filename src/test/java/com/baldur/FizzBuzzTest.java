@@ -9,38 +9,26 @@ public class FizzBuzzTest
 	{
 		FizzBuzz fizzBuzz = new FizzBuzz();
 		String actualResult = fizzBuzz.say(1);
-		if(!"1".equals(actualResult))
-		{
-		    	testFail++;
-			System.out.println("EXPECTED " + "1" + "  but  " + actualResult);
-		}
-		else
-		{
-			testSuccess++;
-		}
+		assertEquals("1", !"1".equals(actualResult));
 
 		actualResult = fizzBuzz.say(2);
-		if(!"2".equals(actualResult))
-		{
-		    	testFail++;
-			System.out.println("EXPECTED " + "2" + "  but  " + actualResult);
-		}
-		else
-		{
-			testSuccess++;
-		}
+		assertEquals("2", !"2".equals(actualResult));	
 
 		actualResult = fizzBuzz.say(3);
-		if(!"Fizz".equals(actualResult))
+		assertEquals("3", !"Fizz".equals(actualResult));
+		outputTestResport(testResult);	
+	}
+	public static void assertEquals(String exception, boolean actualResult)
+	{
+		if(actualResult)
 		{
-		    	testFail++;
-			System.out.println("EXPECTED " + "Fizz" + "  but  " + actualResult);
+			testFail++;
+			System.out.println("EXPECTED " + "Fizz" + "  but  " + actualResult);	
 		}
 		else
 		{
 			testSuccess++;
 		}
-		outputTestResport(testResult);	
 	}
 	public static void outputTestResport(boolean testResult)
 	{
