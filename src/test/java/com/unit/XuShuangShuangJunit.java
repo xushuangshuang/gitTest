@@ -89,6 +89,16 @@ public class XuShuangShuangJunit
 		}
 		assertEquals(exception, actualResult, testFail);
 	}
+	public static void assertFalse(boolean actualResult)
+	{
+		boolean testFail = false == actualResult;
+		assertEquals(false, actualResult, testFail);
+	}
+	public static void assertTrue(boolean actualResult)
+	{
+		boolean testFail = true == actualResult;
+		assertEquals(true, actualResult, testTrue);
+	}
 	public static void assertEquals(String exception, String actualResult)
 	{
 		boolean testFail = exception.equals(actualResult);
