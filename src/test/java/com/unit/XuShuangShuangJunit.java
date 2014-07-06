@@ -75,6 +75,21 @@ public class XuShuangShuangJunit
 	{
 		assertEquals(exception, actualResult, exception.equals(actualResult));
 	}
+	public static void assertEquals(int exception, int actualResult)
+	{
+		if(exception != actualResult)
+		{
+			testFail++;
+			testResult = false;
+			testNum++;
+			System.out.println("EXPECTED  " + exception + "  BUT  " + actualResult);
+		}
+		else
+		{
+			testNum++;
+			testSuccess++;
+		}
+	}
 	public static void assertEquals(String exception, String actualResult, boolean testEquals)
 	{
 		if(!testEquals)
@@ -82,7 +97,7 @@ public class XuShuangShuangJunit
 			testFail++;
 			testResult = false;
 			testNum++;
-			System.out.println("EXPECTED " + exception + "  but  " + actualResult);	
+			System.out.println("EXPECTED " + exception + "  BUT  " + actualResult);	
 		}
 		else
 		{
