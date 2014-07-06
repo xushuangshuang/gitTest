@@ -74,7 +74,7 @@ public class XuShuangShuangJunit
 		System.out.print("TEST NUM :" + testNum + "  ");
 		if(testResult)
 		{
-			System.out.println("TEST SUCCESS :" + testSuccess + "  TEST FAIL :" + "0");
+			System.out.println("TEST SUCCESS :" + testSuccess );
 		}
 		else
 		{
