@@ -15,9 +15,8 @@ public class FizzBuzzTest
 		{
 			if(method.getName().startsWith("test"))
 			{
-				System.out.println("testing " + method.getName());
 				Object obj = FizzBuzzTest.class.newInstance();
-				method.invoke(obj);
+				method.invoke(obj, new Object[]{});
 			}
 		}
 		outputTestResport(testResult);	
