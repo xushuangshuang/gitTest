@@ -1,6 +1,8 @@
 package com.baldur;
 
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.ArrayList;
 
 public class FizzBuzzTest
 {
@@ -10,7 +12,16 @@ public class FizzBuzzTest
 	FizzBuzz fizzBuzz = new FizzBuzz();
 	public static void main(String[] args) throws Exception
 	{
+		List<Method> testMethod = new ArrayList<Method>();
 		Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+		for(Method method : methods )
+		{
+			if(method.getName().startsWith("test"))
+			{
+				testMethod.add(method);
+			}
+		}
+
 		for(Method method : methods )
 		{
 			if(method.getName().startsWith("test"))
