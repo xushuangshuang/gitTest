@@ -11,10 +11,10 @@ public class FizzBuzzTest
 
 		new FizzBuzzTest().test_1_should_be_1();
 		new FizzBuzzTest().test_2_should_be_2();	
-		new FizzBuzzTest().test_3_should_be_3();
+		new FizzBuzzTest().test_Fizz_should_be_3();
 		
 	}
-	public void test_3_should_be_3()
+	public void test_Fizz_should_be_3()
 	{
 		String actualResult = fizzBuzz.say(3);
 		assertEquals("3", !"Fizz".equals(actualResult));
