@@ -53,7 +53,7 @@ public class XuShuangShuangJunit
 			catch(Exception e)
 			{
 				testResult = false;
-				System.out.println("UNEXCEPTION exception  " +  method);
+				System.out.println("UNEXCEPTION exception : " +  method);
 				e.printStackTrace();
 			}
 		}	
