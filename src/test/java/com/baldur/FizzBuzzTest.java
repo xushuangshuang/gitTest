@@ -7,16 +7,30 @@ public class FizzBuzzTest
 	static int testFail = 0;
 	public static void main(String[] args)
 	{
-		FizzBuzz fizzBuzz = new FizzBuzz();
-		String actualResult = fizzBuzz.say(1);
-		assertEquals("1", !"1".equals(actualResult));
-
-		actualResult = fizzBuzz.say(2);
-		assertEquals("2", !"2".equals(actualResult));	
-
-		actualResult = fizzBuzz.say(3);
+		
+		test_1_should_be_1();
+		test_2_should_be_2();	
+		test_3_should_be_3();
+		
+	}
+	public static void test_3_should_be_3()
+	{
+		FizzBuzz fizzBuzz3 = new FizzBuzz();
+		String actualResult = fizzBuzz3.say(3);
 		assertEquals("3", !"Fizz".equals(actualResult));
-		outputTestResport(testResult);	
+		outputTestResport(testResult);
+	}
+	public static void test_2_should_be_2()
+	{
+		FizzBuzz fizzBuzz2 = new FizzBuzz();
+		String actualResult = fizzBuzz2.say(2);
+		assertEquals("2", !"2".equals(actualResult));
+	}
+	public static void test_1_should_be_1()
+	{
+		FizzBuzz fizzBuzz1 = new FizzBuzz();
+		String actualResult = fizzBuzz1.say(1);
+		assertEquals("1", !"1".equals(actualResult));
 	}
 	public static void assertEquals(String exception, boolean actualResult)
 	{
