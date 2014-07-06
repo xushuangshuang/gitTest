@@ -17,15 +17,23 @@ public class FizzBuzzTest
 		runAllTest(clazz);
 		outputTestResport(testResult);	
 	}
-	public static void runAllTest(Class clazz) throws Exception
+	public static void runAllTest(Class clazz)
 	{
 		Iterator<Method> methodIterator = getAllTestMethod(clazz).iterator();
 		while(methodIterator.hasNext())
 		{
 			Method method = methodIterator.next();
-			Object obj = clazz.newInstance();
-			method.invoke(obj, new Object[]{});
-		
+			try
+			{
+				Object obj = clazz.newInstance();
+				method.invoke(obj, new Object[]{});
+			}
+			catch(Exception e)
+			{
+				testResult = false;
+				System.out.println("UNEXCEPTION exception");
+				e.printStackTrace();
+			}
 		}	
 	}
 	public static List<Method> getAllTestMethod(Class clazz)
