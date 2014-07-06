@@ -5,9 +5,23 @@ public class FizzBuzzTest
 	public static void main(String[] args)
 	{
 		FizzBuzz fizzBuzz = new FizzBuzz();
+		String actualResult = fizzBuzz.say(1);
+		if("1".equals(actualResult))
+		{
+			System.out.println("EXPECTED " + "1" + "  but  " + actualResult);
+		}
 
-		System.out.println("1".equals(fizzBuzz.say(1)));
-		System.out.println("2".equals(fizzBuzz.say(2)));
-		System.out.println("Fizz".equals(fizzBuzz.say(3)));
+		actualResult = fizzBuzz.say(2);
+		if("2".equals(actualResult))
+		{
+			System.out.println("EXPECTED " + "2" + "  but  " + actualResult);
+		}
+
+		actualResult = fizzBuzz.say(3);
+		if("Fizz".equals(actualResult))
+		{
+			System.out.println("EXPECTED " + "Fizz" + "  but  " + actualResult);
+		}
+
 	}
 }
