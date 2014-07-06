@@ -1,24 +1,31 @@
 package com.baldur;
 
+import java.lang.reflect.Method;
+
 public class FizzBuzzTest
 {
   	static boolean testResult = true;
 	static int testSuccess = 0;
 	static int testFail = 0;
 	FizzBuzz fizzBuzz = new FizzBuzz();
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
-
-		new FizzBuzzTest().test_1_should_be_1();
-		new FizzBuzzTest().test_2_should_be_2();	
-		new FizzBuzzTest().test_Fizz_should_be_3();
-		
+		Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+		for(Method method : methods )
+		{
+			if(method.getName().startsWith("test"))
+			{
+				System.out.println("testing " + method.getName());
+				Object obj = FizzBuzzTest.class.newInstance();
+				method.invoke(obj);
+			}
+		}
+		outputTestResport(testResult);	
 	}
 	public void test_Fizz_should_be_3()
 	{
 		String actualResult = fizzBuzz.say(3);
 		assertEquals("3", !"Fizz".equals(actualResult));
-		outputTestResport(testResult);
 	}
 	public void test_2_should_be_2()
 	{
